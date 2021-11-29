@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import CategoriesRepository from '../modules/cars/repositories/implementations/CategoriesRepository'
+
 import {createCategoryController} from "../modules/cars/useCases/categories/createCategory/";
 import {listCategoriesController} from "../modules/cars/useCases/categories/listCategories";
 
@@ -13,4 +13,4 @@ categoriesRoutes.get("/", (req, res) => {
     return listCategoriesController.handle(req, res)
 })
 
-export {categoriesRoutes}
+export default categoriesRoutes
