@@ -3,6 +3,7 @@ import multer from 'multer'
 
 import {createCategoryController} from "../modules/cars/useCases/categories/createCategory/";
 import {listCategoriesController} from "../modules/cars/useCases/categories/listCategories";
+import {importCategoryController} from "../modules/cars/useCases/importCategory";
 
 const categoriesRoutes = Router()
 const upload = multer({
@@ -18,9 +19,7 @@ categoriesRoutes.get("/", (req, res) => {
 })
 
 categoriesRoutes.post("/import", upload.single("file"), (req, res) => {
-    const {file} = req
-    console.log(file)
-    return res.send()
+    return importCategoryController.handle(req, res)
 })
 
 export default categoriesRoutes
