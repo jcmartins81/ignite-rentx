@@ -6,21 +6,30 @@ services:
     container_name: database_ignite
     restart: always
     ports:
-     - "5432:5432"
+      - "5432:5432"
     environment:
-      - POSTGRES_US4W=docker
+      - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=ignite
       - POSTGRES_DB=rentx
     volumes:
-      - ./pgdata:data/postgres
+      - /pgdata:/data/postgres
+    networks:
+      - rentx_network
   app:
-    build: .
+    image: 'node:latest'
     container_name: rentx
+    restart: always
     ports:
       - "3333:3333"
     volumes:
-      - ../:/usr/app
+      - ../:/usr/src/app
+    depends_on:
+      - database_ignite
+    working_dir: /usr/src/app
+    command: bash -c "yarn && yarn dev"
+    networks:
+      - rentx_network
 
-  volumes:
-    pgdata:
-      driver: local
+networks:
+  rentx_network:
+    driver: bridge
