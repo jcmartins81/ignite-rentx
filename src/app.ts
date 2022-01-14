@@ -3,14 +3,14 @@ import express from 'express'
 import morgan from 'morgan'
 import 'reflect-metadata'
 import swaggerUi from 'swagger-ui-express'
-import './database'
+import createConnection from './database'
 import router from './routes/index'
 import swaggerFile from './swagger.json'
-
-
-
+import connect from "./database";
 
 const app = express()
+
+connect()
 
 app.use(cors())
 app.use(morgan('dev'))

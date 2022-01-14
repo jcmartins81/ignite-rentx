@@ -7,7 +7,7 @@ class CategoriesRepository implements ICategoriesRepository{
     private static INSTANCE: CategoriesRepository
 
     private constructor() {
-        this.repository = getRepository(Category)
+        this.repository = getRepository("categories")
     }
 
     public static getInstance(): CategoriesRepository {
@@ -24,8 +24,7 @@ class CategoriesRepository implements ICategoriesRepository{
     }
 
     async list(): Promise<Category[]> {
-        const categories = await this.repository.find()
-        return categories
+        return await this.repository.find()
     }
 
     async findByName(name: string): Promise<Category> {

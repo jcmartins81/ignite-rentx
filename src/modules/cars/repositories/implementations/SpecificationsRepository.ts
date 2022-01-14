@@ -9,7 +9,7 @@ class SpecificationsRepository implements ISpecificationRepository{
     private static INSTANCE: SpecificationsRepository
 
     private constructor() {
-        this.repository = getRepository(Specification)
+        this.repository = getRepository("specifications")
     }
 
     public static getInstance(): SpecificationsRepository {
@@ -28,7 +28,7 @@ class SpecificationsRepository implements ISpecificationRepository{
     }
 
     async findByName(name: string): Promise<Specification> {
-        return this.repository.findOne({
+        return await this.repository.findOne({
             name
         })
 
