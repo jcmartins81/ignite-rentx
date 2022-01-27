@@ -1,10 +1,10 @@
 import {Router, Request, Response} from "express";
-import createUserController from "../modules/accounts/useCases/createUser";
+import CreateUserController from "../modules/accounts/useCases/createUser";
 
 const usersRoutes = Router()
 
 usersRoutes.post("/", (req: Request, res: Response) => {
-    return createUserController().handle(req, res)
+    return CreateUserController().handle(req, res)
 })
 
 export default usersRoutes
