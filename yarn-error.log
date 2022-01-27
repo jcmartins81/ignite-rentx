@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js add @types/bcrypt
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add bcrypt
 
 PATH: 
-  /home/zemartins81/.zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/home/zemartins81/projetos/rocketseat/ignite_node/ignite-rentx/node_modules/.bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/ProgramData/DockerDesktop/version-bin:/mnt/c/Users/jcmar/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/JetBrains/WebStorm 2021.3/bin
+  /home/zemartins81/.zinit/polaris/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/home/zemartins81/projetos/rocketseat/ignite_node/ignite-rentx/node_modules/.bin:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/:/mnt/c/WINDOWS/System32/OpenSSH/:/mnt/c/Users/jcmar/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/JetBrains/WebStorm 2021.3/bin
 
 Yarn version: 
   1.22.17
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/home/zemartins81/projetos/rocketseat/ignite_node/ignite-rentx/node_modules/.bin/acorn'
+  Error: EACCES: permission denied, mkdir '/home/zemartins81/projetos/rocketseat/ignite_node/ignite-rentx/node_modules/ts-node-dev/node_modules/rimraf'
 
 npm manifest: 
   {
