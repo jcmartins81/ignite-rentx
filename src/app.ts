@@ -3,10 +3,11 @@ import express from 'express'
 import morgan from 'morgan'
 import 'reflect-metadata'
 import swaggerUi from 'swagger-ui-express'
-import createConnection from './database'
+
+import connect from './database'
 import router from './routes/index'
 import swaggerFile from './swagger.json'
-import connect from "./database";
+
 
 const app = express()
 
