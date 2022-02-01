@@ -1,6 +1,7 @@
 import { compare } from 'bcrypt'
 import { sign } from 'jsonwebtoken'
 import UsersRepository from '../../repositories/implementations/UsersRepository'
+import {AppError} from "../../../../errors/AppError";
 
 
 interface IRequest {
@@ -22,11 +23,11 @@ class AuthenticateUserUseCase {
   async execute({ email, password }: IRequest): Promise<IResponse> {
     const user = await this.usersRepository.findByEmail(email)
 
-    if (!user) throw new Error('Email or password incorrect!')
+    if (!user) throw new AppError('Email or password incorrect!')
 
     const passwordMatch = await compare(password, user.password)
 
-    if (!passwordMatch) throw new Error('Email or password incorrect!')
+    if (!passwordMatch) throw new AppError('Email or password incorrect!', 400)
 
     const token = sign({}, 'aquivaiumtokemaleatório', {
       subject: user.id,

@@ -1,4 +1,5 @@
 import {ISpecificationRepository} from "../../../repositories/ISpecificationsRepository";
+import {AppError} from "../../../../../errors/AppError";
 
 interface IRequest {
     name: string;
@@ -12,7 +13,7 @@ class CreateSpecificationUseCase {
 
     async execute({name, description}: IRequest): Promise<void> {
         const specificationAlreadyExists = await this.specificationsRepository.findByName(name)
-        if(specificationAlreadyExists) throw new Error("Specification already exists!")
+        if(specificationAlreadyExists) throw new AppError("Specification already exists!", 400)
 
         await this.specificationsRepository.create({
             name,
