@@ -1,4 +1,4 @@
-import { UpdateUserAvatarController } from './UpdateUserAvatarController'
+import UpdateUserAvatarController from './UpdateUserAvatarController'
 import UsersRepository from '../../repositories/implementations/UsersRepository'
 import { UpdateUserAvatarUseCase } from './UpdateUserAvatarUseCase'
 
