@@ -1,12 +1,12 @@
-import {ICategoriesRepository} from "../../../repositories/ICategoriesRepository";
-import Category from "../../../entities/Category";
+import Category from '../../../entities/Category'
+import { ICategoriesRepository } from '../../../repositories/ICategoriesRepository'
 
 class ListCategoriesUseCase {
-    constructor(private categoriesRepository: ICategoriesRepository) {}
+  constructor(private categoriesRepository: ICategoriesRepository) {}
 
-        execute(): Category[] {
-            return this.categoriesRepository.list()
-        }
+  execute(): Category[] {
+    return this.categoriesRepository.list()
+  }
 }
 
 export default ListCategoriesUseCase
