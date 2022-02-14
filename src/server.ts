@@ -1,9 +1,8 @@
-import http from 'http'
 import dotenv from 'dotenv'
+import http from 'http'
 import path from 'path'
-
-
 import app from './app'
+
 
 const { resolve, join } = path
 
